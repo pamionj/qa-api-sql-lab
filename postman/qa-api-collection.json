@@ -1,0 +1,133 @@
+{
+  "info": {
+    "_postman_id": "f6554d7d-f347-4f12-bbee-464f62e137de",
+    "name": "QA API Lab – ReqRes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52176177",
+    "_collection_link": "https://go.postman.co/collection/52176177-f6554d7d-f347-4f12-bbee-464f62e137de?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET Users",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Test 1: validar que la respuesta sea 200 OK",
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "// Test 2: validar que venga un arreglo con usuarios",
+              "pm.test(\"Response contains users\", function () {",
+              "    const json = pm.response.json();",
+              "",
+              "    // Verifica que sea un array",
+              "    pm.expect(json).to.be.an(\"array\");",
+              "",
+              "    // Verifica que tenga al menos 1 elemento",
+              "    pm.expect(json.length).to.be.above(0);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/users",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Create User",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Test 1: Validar que el servidor responda con 201 (Created)\r",
+              "// 201 indica que el recurso fue creado exitosamente\r",
+              "pm.test(\"Status code is 201\", function () {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});\r",
+              "\r",
+              "// Test 2: Validar que el usuario fue creado correctamente\r",
+              "pm.test(\"User created correctly\", function () {\r",
+              "\r",
+              "    // Convertimos la respuesta a objeto JSON\r",
+              "    const json = pm.response.json();\r",
+              "\r",
+              "    // Verificamos que existan los campos esperados\r",
+              "    pm.expect(json).to.have.property(\"name\");\r",
+              "    pm.expect(json).to.have.property(\"email\");\r",
+              "\r",
+              "    // Validamos que los valores coincidan con los enviados en el body\r",
+              "    pm.expect(json.name).to.eql(\"Pablo\");\r",
+              "    pm.expect(json.email).to.eql(\"pablo@test.com\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Pablo\",\r\n  \"email\": \"pablo@test.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/users",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
