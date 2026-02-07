@@ -169,21 +169,55 @@ SELECT * FROM users;
 
 - Flujo QA end-to-end
 ---
-## ▶ How to run this lab
+## ▶️ Cómo ejecutar este laboratorio
 
-### API Tests
+### Requisitos
 
-1. Open Postman
-2. Import `/postman/qa-api-collection.json`
-3. Run GET Users
-4. Run POST Create User
-5. Verify green tests
+- Postman Desktop instalado  
+- SQLite descargado  
+- PowerShell o terminal en Windows  
 
-### SQL
+### Pasos
+
+1. Importar la colección Postman ubicada en:
+
+/postman/qa-api-collection.json
+
+2. Ejecutar las requests GET y POST desde Postman.
+
+3. Verificar que los tests aparezcan como PASSED.
+
+4. Crear la base de datos SQLite:
 
 ```powershell
 .\sqlite3 users.db
 ```
+Ejecutar el script SQL ubicado en la carpeta:
+
+/sql/init.sql
+
+5. Verificar que los datos se hayan insertado correctamente ejecutando:
+```sql
+SELECT * FROM users;
+```
+
+---
+
+## 📸 Postman Test Results
+
+![Postman Results](postman/postman-results.png)
+
+---
+
+## 📚 Lo que aprendí
+
+- Realizar pruebas básicas de APIs usando Postman (requests GET y POST).
+- Escribir assertions en JavaScript para validar códigos de estado y payloads.
+- Crear scripts Post-response para automatizar validaciones.
+- Simular persistencia de datos usando SQLite.
+- Ejecutar consultas SQL básicas para verificar integridad de datos.
+- Comprender un flujo QA end-to-end: consumo de API → validación → verificación backend.
+- Documentar el trabajo QA de forma clara para revisión técnica.
 
 ---
 ## 👤 Autor
