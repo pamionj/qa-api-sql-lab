@@ -1,5 +1,12 @@
 # QA API + SQL Mini Lab
 
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+![QA](https://img.shields.io/badge/QA-Testing-blue?style=for-the-badge)
+![API](https://img.shields.io/badge/API-Testing-green?style=for-the-badge)
+![GitHub](https://img.shields.io/badge/GitHub-Repo-black?style=for-the-badge&logo=github)
+
 Mini laboratorio práctico de QA enfocado en:
 
 - Testing de APIs con Postman  
@@ -157,7 +164,7 @@ SELECT * FROM users;
 ---
 ## 🎯 Objetivo del laboratorio
 
-- Demostrar competencias junior en:
+- Demostrar competencias en:
 
 - API Testing con Postman
 
@@ -225,3 +232,12 @@ SELECT * FROM users;
 **Pablo Amion**
 
 QA Automation / QA Analyst Junior
+
+---
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT.
+
+Puedes usar, copiar, modificar y distribuir este código libremente, siempre que se mantenga el aviso de copyright original.
+
+Ver archivo `LICENSE` para más detalles.
