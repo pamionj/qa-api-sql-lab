@@ -198,3 +198,12 @@ SELECT * FROM users;
 **Pablo Amion**
 
 QA Automation / QA Analyst Junior
+
+---
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT.
+
+Puedes usar, copiar, modificar y distribuir este código libremente, siempre que se mantenga el aviso de copyright original.
+
+Ver archivo `LICENSE` para más detalles.
