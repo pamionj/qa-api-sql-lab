@@ -75,6 +75,7 @@ pm.test("Response contains users", function () {
 
 ### POST Create User
 
+Endpoint utilizado:
  ```javascript
 https://jsonplaceholder.typicode.com/users
 ```
@@ -116,9 +117,8 @@ pm.test("User created correctly", function () {
 });
 ```
 La colección Postman se encuentra exportada en:
-```
-/postman/qa-api-collection.json
-```
+
+[/postman/qa-api-collection.json](/postman/qa-api-collection.json)
 ---
 
 ## 🗄️ Parte 2 – Validación con SQL (SQLite)
@@ -188,22 +188,22 @@ SELECT * FROM users;
 
 1. Importar la colección Postman ubicada en:
 
-/postman/qa-api-collection.json
+[/postman/qa-api-collection.json](/postman/qa-api-collection.json).
 
-2. Ejecutar las requests GET y POST desde Postman.
+3. Ejecutar las requests GET y POST desde Postman.
 
-3. Verificar que los tests aparezcan como PASSED.
+4. Verificar que los tests aparezcan como PASSED.
 
-4. Crear la base de datos SQLite:
+5. Crear la base de datos SQLite:
 
 ```powershell
 .\sqlite3 users.db
 ```
 Ejecutar el script SQL ubicado en la carpeta:
 
-/sql/init.sql
+[/sql/init.sql](/sql/init.sql)
 
-5. Verificar que los datos se hayan insertado correctamente ejecutando:
+6. Verificar que los datos se hayan insertado correctamente ejecutando:
 ```sql
 SELECT * FROM users;
 ```
